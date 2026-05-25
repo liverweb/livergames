@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Best Games | Endless Fun</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --dark-bg: #1A1A2E;
+            --main-bg: #0F0F23;
+            --card-bg: #1E1E3A;
+            --purple-cta: #8B43B8;
+            --purple-light: #A450D2;
+            --text-color: #E0E0E0;
+            --heading-color: #FFFFFF;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--main-bg);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px 0;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--heading-color);
+            text-transform: uppercase;
+        }
+
+        .logo span { color: var(--purple-light); }
+
+        .search-box input {
+            padding: 12px 20px;
+            border-radius: 25px;
+            border: none;
+            background-color: var(--card-bg);
+            color: white;
+            width: 200px;
+        }
+
+        .hero-banner {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://i.postimg.cc/C1KqDrFn/LXlAPV.jpg');
+            background-size: cover;
+            background-position: center;
+            border-radius: 20px;
+            padding: 80px 40px;
+            text-align: center;
+            margin-bottom: 50px;
+            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .hero-banner h1 { 
+            font-size: 48px; 
+            margin: 0 0 15px; 
+            color: #fff; 
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.7);
+        }
+
+        .hero-banner p { 
+            font-size: 20px; 
+            opacity: 0.9; 
+            max-width: 700px; 
+            margin: 0 auto;
+            text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+        }
+
+        .section-title {
+            font-size: 28px;
+            margin-bottom: 30px;
+            color: var(--heading-color);
+            border-left: 5px solid var(--purple-cta);
+            padding-left: 15px;
+        }
+
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+            margin-bottom: 60px; /* Added space before the features section */
+        }
+
+        .game-card {
+            background-color: var(--card-bg);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: 0.3s;
+            border-bottom: 3px solid transparent;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .game-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--purple-cta);
+        }
+
+        .game-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .game-info { padding: 20px; text-align: center; }
+        .game-info h3 { margin: 0 0 15px; font-size: 22px; color: #fff; }
+
+        .game-details { margin-bottom: 20px; font-size: 14px; }
+        .platforms, .stats { display: flex; justify-content: center; gap: 15px; margin-bottom: 10px; }
+        .game-details span { display: flex; align-items: center; gap: 5px; }
+
+        .fa-android { color: #3DDC84; }
+        .fa-apple { color: #ffffff; }
+        .fa-windows { color: #00A4EF; }
+        .fa-star { color: #FFD700; }
+        .fa-database { color: #5DADE2; }
+
+        .cta-button {
+            display: block;
+            background: linear-gradient(to right, var(--purple-cta), var(--purple-light));
+            color: #fff;
+            padding: 12px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .cta-button:hover { opacity: 0.9; transform: scale(1.02); }
+
+        /* Features Section Bottom Styling */
+        .features-section {
+            padding: 40px 0;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            text-align: center;
+        }
+
+        .feature-item {
+            background-color: var(--card-bg);
+            padding: 25px;
+            border-radius: 15px;
+            transition: 0.3s;
+        }
+
+        .feature-item:hover {
+            background-color: #25254d;
+        }
+
+        .feature-icon {
+            font-size: 35px;
+            margin-bottom: 10px;
+        }
+
+        .feature-item h3 {
+            margin: 10px 0;
+            font-size: 18px;
+            color: #fff;
+        }
+
+        .feature-item p {
+            font-size: 14px;
+            opacity: 0.7;
+            line-height: 1.5;
+        }
+
+        @media (max-width: 768px) {
+            header { flex-direction: column; gap: 20px; }
+            .hero-banner h1 { font-size: 32px; }
+            .hero-banner p { font-size: 16px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <div class="logo">BEST<span>GAMES</span></div>
+            <div class="search-box">
+                <input type="text" placeholder="Search for games...">
+            </div>
+        </header>
+
+        <section class="hero-banner">
+            <h1>Discover Endless Fun!</h1>
+            <p>The best exclusive offers for mobile and PC games in one place. Select your favorite title and start playing now.</p>
+        </section>
+
+        <h2 class="section-title">Trending Games</h2>
+
+        <div class="games-grid">
+            <div class="game-card">
+                <img src="roblox.jfif" alt="Roblox">
+                <div class="game-info">
+                    <h3>Roblox</h3>
+                    <div class="game-details">
+                        <div class="platforms">
+                            <span><i class="fab fa-android"></i> Android</span>
+                            <span><i class="fab fa-apple"></i> iOS</span>
+                        </div>
+                        <div class="stats">
+                            <span><i class="fas fa-database"></i> 160MB</span>
+                            <span><i class="fas fa-star"></i> 4.5</span>
+                        </div>
+                    </div>
+                    <a href="https://lockedpage1.website/cl/i/2775r6" class="cta-button">Play Roblox</a>
+                </div>
+            </div>
+
+            <div class="game-card">
+                <img src="fortnite.jfif" alt="Fortnite">
+                <div class="game-info">
+                    <h3>Fortnite</h3>
+                    <div class="game-details">
+                        <div class="platforms">
+                            <span><i class="fab fa-android"></i> Android</span>
+                            <span><i class="fab fa-windows"></i> PC</span>
+                        </div>
+                        <div class="stats">
+                            <span><i class="fas fa-database"></i> 25GB</span>
+                            <span><i class="fas fa-star"></i> 4.7</span>
+                        </div>
+                    </div>
+                    <a href="https://lockedpage1.website/cl/i/2775r6" class="cta-button">Install Fortnite</a>
+                </div>
+            </div>
+
+            <div class="game-card">
+                <img src="minecraft.jfif" alt="Minecraft">
+                <div class="game-info">
+                    <h3>Minecraft</h3>
+                    <div class="game-details">
+                        <div class="platforms">
+                            <span><i class="fab fa-android"></i> Android</span>
+                            <span><i class="fab fa-apple"></i> iOS</span>
+                        </div>
+                        <div class="stats">
+                            <span><i class="fas fa-database"></i> 700MB</span>
+                            <span><i class="fas fa-star"></i> 4.8</span>
+                        </div>
+                    </div>
+                    <a href="https://lockedpage1.website/cl/i/2775r6" class="cta-button">Get Minecraft</a>
+                </div>
+            </div>
+
+            <div class="game-card">
+                <img src="valorant.jfif" alt="Valorant">
+                <div class="game-info">
+                    <h3>Valorant</h3>
+                    <div class="game-details">
+                        <div class="platforms">
+                            <span><i class="fab fa-windows"></i> Windows PC</span>
+                        </div>
+                        <div class="stats">
+                            <span><i class="fas fa-database"></i> 30GB</span>
+                            <span><i class="fas fa-star"></i> 4.9</span>
+                        </div>
+                    </div>
+                    <a href="https://lockedpage1.website/cl/i/2775r6" class="cta-button">Download Now</a>
+                </div>
+            </div>
+        </div>
+
+        <section class="features-section">
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>Secure and Safe</h3>
+                    <p>All of our offers have been vetted to ensure a secure experience.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🎁</div>
+                    <h3>Exclusive Rewards</h3>
+                    <p>Enjoy exclusive perks and rewards with our offers.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Instant Access</h3>
+                    <p>Start playing immediately with no delays.</p>
+                </div>
+            </div>
+        </section>
+
+    </div> </body>
+</html>
